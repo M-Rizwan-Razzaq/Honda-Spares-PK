@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Placeholder illustration of a spark plug">
+  <rect width="800" height="600" fill="#F3F4F6"/>
+  <rect x="0" y="0" width="800" height="8" fill="#CC0000"/>
+  <g fill="none" stroke="#2A2E33" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="375" y="120" width="50" height="60" rx="12"/>
+    <path d="M365 180 h70 v50 h-70 z"/>
+    <path d="M370 230 h60 v30 h-60 z"/>
+    <path d="M340 260 h120 l-20 60 h-80 z"/>
+    <rect x="365" y="320" width="70" height="110" rx="8"/>
+    <line x1="365" y1="345" x2="435" y2="345"/>
+    <line x1="365" y1="370" x2="435" y2="370"/>
+    <line x1="365" y1="395" x2="435" y2="395"/>
+    <line x1="400" y1="430" x2="400" y2="475"/>
+    <path d="M400 475 L440 475 L440 430"/>
+  </g>
+  <rect x="365" y="320" width="70" height="18" fill="#CC0000"/>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Placeholder illustration of a piston and connecting rod">
+  <rect width="800" height="600" fill="#F3F4F6"/>
+  <rect x="0" y="0" width="800" height="8" fill="#CC0000"/>
+  <g fill="none" stroke="#2A2E33" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="290" y="140" width="220" height="190" rx="18"/>
+    <line x1="290" y1="195" x2="510" y2="195"/>
+    <line x1="290" y1="235" x2="510" y2="235"/>
+    <circle cx="400" cy="290" r="26"/>
+    <path d="M400 320 L400 430"/>
+    <circle cx="400" cy="470" r="44"/>
+    <circle cx="400" cy="470" r="18"/>
+  </g>
+  <circle cx="400" cy="290" r="12" fill="#CC0000"/>
+</svg>

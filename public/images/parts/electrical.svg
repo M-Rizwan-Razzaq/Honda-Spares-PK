@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Placeholder illustration of an electrical control unit">
+  <rect width="800" height="600" fill="#F3F4F6"/>
+  <rect x="0" y="0" width="800" height="8" fill="#CC0000"/>
+  <g fill="none" stroke="#2A2E33" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="270" y="170" width="260" height="180" rx="18"/>
+    <rect x="330" y="350" width="140" height="50" rx="10"/>
+    <line x1="360" y1="350" x2="360" y2="400"/>
+    <line x1="400" y1="350" x2="400" y2="400"/>
+    <line x1="440" y1="350" x2="440" y2="400"/>
+    <path d="M220 200 C170 230 170 290 220 320"/>
+    <path d="M580 200 C630 230 630 290 580 320"/>
+    <path d="M400 210 L370 265 L415 265 L385 320"/>
+  </g>
+  <path d="M400 210 L370 265 L415 265 L385 320 Z" fill="#CC0000" transform="translate(0 -2)" opacity="0"/>
+  <path d="M404 214 L376 262 L414 262 L390 312 Z" fill="#CC0000"/>
+</svg>

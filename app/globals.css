@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-honda: #cc0000;
+  --color-honda-dark: #a30000;
+  --color-honda-soft: #fdf2f2;
+  --color-ink: #131417;
+  --color-charcoal: #22262b;
+  --color-charcoal-soft: #383e46;
+  --color-surface: #f5f6f7;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-dark: #1da851;
+  --font-sans: var(--font-barlow);
+  --shadow-card: 0 1px 2px rgba(16, 20, 26, 0.05), 0 10px 24px -14px rgba(16, 20, 26, 0.25);
+  --shadow-card-hover: 0 2px 4px rgba(16, 20, 26, 0.06), 0 18px 36px -14px rgba(16, 20, 26, 0.3);
+  --shadow-drawer: -24px 0 48px -12px rgba(16, 20, 26, 0.25);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-barlow), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+section[id] {
+  scroll-margin-top: 6.5rem;
+}
+
+::selection {
+  background: #cc0000;
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid #cc0000;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.price-num {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.animate-slide-up {
+  animation: slide-up 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-fade-in,
+  .animate-slide-in-right,
+  .animate-slide-up {
+    animation: none;
+  }
+}

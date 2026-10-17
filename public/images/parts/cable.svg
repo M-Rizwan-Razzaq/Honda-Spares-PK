@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Placeholder illustration of a control cable">
+  <rect width="800" height="600" fill="#F3F4F6"/>
+  <rect x="0" y="0" width="800" height="8" fill="#CC0000"/>
+  <g fill="none" stroke="#2A2E33" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M200 170 C360 210 300 400 470 430 C540 445 580 420 610 390"/>
+    <rect x="160" y="145" width="56" height="30" rx="14"/>
+    <rect x="600" y="375" width="56" height="30" rx="14" transform="rotate(40 628 390)"/>
+    <circle cx="250" cy="330" r="14"/>
+    <circle cx="380" cy="410" r="14"/>
+  </g>
+  <rect x="160" y="145" width="20" height="30" rx="8" fill="#CC0000"/>
+  <circle cx="628" cy="390" r="10" fill="#CC0000"/>
+</svg>

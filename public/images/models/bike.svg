@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Generic line-art illustration of a motorcycle">
+  <rect width="800" height="600" fill="#F3F4F6"/>
+  <g fill="none" stroke="#2A2E33" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="195" cy="430" r="100"/>
+    <circle cx="195" cy="430" r="46"/>
+    <circle cx="610" cy="430" r="100"/>
+    <circle cx="610" cy="430" r="46"/>
+    <path d="M195 430 L300 310 L430 300 L520 320 L610 430"/>
+    <path d="M300 310 L350 420 L470 425 L520 320"/>
+    <rect x="330" y="380" width="110" height="80" rx="14"/>
+    <path d="M330 300 C350 250 420 240 470 255 L500 290 L430 300 Z"/>
+    <path d="M430 300 L560 300 C590 300 600 320 600 340"/>
+    <line x1="610" y1="430" x2="640" y2="250"/>
+    <line x1="640" y1="250" x2="700" y2="220"/>
+    <line x1="640" y1="250" x2="590" y2="230"/>
+    <path d="M250 400 L180 470 L120 480"/>
+    <path d="M440 460 L520 470 L600 470"/>
+  </g>
+  <circle cx="195" cy="430" r="12" fill="#CC0000"/>
+  <circle cx="610" cy="430" r="12" fill="#CC0000"/>
+  <rect x="352" y="400" width="66" height="14" rx="7" fill="#CC0000"/>
+</svg>

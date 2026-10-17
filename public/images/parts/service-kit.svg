@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Placeholder illustration of a service toolkit">
+  <rect width="800" height="600" fill="#F3F4F6"/>
+  <rect x="0" y="0" width="800" height="8" fill="#CC0000"/>
+  <g fill="none" stroke="#2A2E33" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="230" y="260" width="340" height="190" rx="18"/>
+    <path d="M330 260 C330 200 470 200 470 260"/>
+    <rect x="370" y="320" width="60" height="50" rx="10"/>
+    <line x1="230" y1="310" x2="570" y2="310"/>
+    <path d="M585 180 L640 140 L680 165 L625 205 Z"/>
+    <path d="M625 205 L560 270"/>
+  </g>
+  <rect x="370" y="332" width="60" height="18" rx="6" fill="#CC0000"/>
+</svg>

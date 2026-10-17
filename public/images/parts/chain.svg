@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Placeholder illustration of a chain sprocket">
+  <rect width="800" height="600" fill="#F3F4F6"/>
+  <rect x="0" y="0" width="800" height="8" fill="#CC0000"/>
+  <g fill="none" stroke="#2A2E33" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="330" cy="300" r="135"/>
+    <circle cx="330" cy="300" r="80"/>
+    <circle cx="330" cy="300" r="30"/>
+    <g stroke-width="14">
+      <line x1="330" y1="165" x2="330" y2="132"/>
+      <line x1="330" y1="165" x2="330" y2="132" transform="rotate(30 330 300)"/>
+      <line x1="330" y1="165" x2="330" y2="132" transform="rotate(60 330 300)"/>
+      <line x1="330" y1="165" x2="330" y2="132" transform="rotate(90 330 300)"/>
+      <line x1="330" y1="165" x2="330" y2="132" transform="rotate(120 330 300)"/>
+      <line x1="330" y1="165" x2="330" y2="132" transform="rotate(150 330 300)"/>
+      <line x1="330" y1="165" x2="330" y2="132" transform="rotate(180 330 300)"/>
+      <line x1="330" y1="165" x2="330" y2="132" transform="rotate(210 330 300)"/>
+      <line x1="330" y1="165" x2="330" y2="132" transform="rotate(240 330 300)"/>
+      <line x1="330" y1="165" x2="330" y2="132" transform="rotate(270 330 300)"/>
+      <line x1="330" y1="165" x2="330" y2="132" transform="rotate(300 330 300)"/>
+      <line x1="330" y1="165" x2="330" y2="132" transform="rotate(330 330 300)"/>
+    </g>
+    <rect x="530" y="250" width="90" height="46" rx="23"/>
+    <rect x="560" y="310" width="90" height="46" rx="23"/>
+    <rect x="530" y="370" width="90" height="46" rx="23"/>
+    <line x1="620" y1="273" x2="650" y2="273"/>
+    <line x1="650" y1="273" x2="650" y2="393"/>
+    <line x1="650" y1="393" x2="620" y2="393"/>
+  </g>
+  <circle cx="330" cy="300" r="12" fill="#CC0000"/>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Placeholder illustration of a rear-view mirror">
+  <rect width="800" height="600" fill="#F3F4F6"/>
+  <rect x="0" y="0" width="800" height="8" fill="#CC0000"/>
+  <g fill="none" stroke="#2A2E33" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="400" cy="230" rx="85" ry="110"/>
+    <ellipse cx="400" cy="230" rx="55" ry="80" stroke-width="8"/>
+    <line x1="400" y1="340" x2="400" y2="430"/>
+    <rect x="355" y="430" width="90" height="40" rx="12"/>
+    <line x1="370" y1="470" x2="360" y2="510"/>
+    <line x1="430" y1="470" x2="440" y2="510"/>
+  </g>
+  <rect x="355" y="442" width="34" height="16" rx="8" fill="#CC0000"/>
+</svg>

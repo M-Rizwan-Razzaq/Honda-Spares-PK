@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Placeholder illustration of a carburettor">
+  <rect width="800" height="600" fill="#F3F4F6"/>
+  <rect x="0" y="0" width="800" height="8" fill="#CC0000"/>
+  <g fill="none" stroke="#2A2E33" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="280" y="190" width="240" height="150" rx="18"/>
+    <circle cx="400" cy="265" r="46"/>
+    <path d="M320 340 L480 340 L460 430 L340 430 Z"/>
+    <line x1="340" y1="430" x2="460" y2="430"/>
+    <rect x="230" y="235" width="50" height="34" rx="10"/>
+    <line x1="400" y1="190" x2="400" y2="150"/>
+    <circle cx="400" cy="138" r="14"/>
+    <line x1="360" y1="380" x2="440" y2="380"/>
+  </g>
+  <circle cx="400" cy="265" r="16" fill="#CC0000"/>
+</svg>

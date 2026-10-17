@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Placeholder illustration of a motorcycle wheel">
+  <rect width="800" height="600" fill="#F3F4F6"/>
+  <rect x="0" y="0" width="800" height="8" fill="#CC0000"/>
+  <g fill="none" stroke="#2A2E33" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="400" cy="300" r="165"/>
+    <circle cx="400" cy="300" r="115"/>
+    <circle cx="400" cy="300" r="30"/>
+    <line x1="400" y1="185" x2="400" y2="270"/>
+    <line x1="400" y1="330" x2="400" y2="415"/>
+    <line x1="285" y1="300" x2="370" y2="300"/>
+    <line x1="430" y1="300" x2="515" y2="300"/>
+    <line x1="319" y1="219" x2="379" y2="279"/>
+    <line x1="421" y1="321" x2="481" y2="381"/>
+    <line x1="481" y1="219" x2="421" y2="279"/>
+    <line x1="379" y1="321" x2="319" y2="381"/>
+  </g>
+  <circle cx="400" cy="300" r="12" fill="#CC0000"/>
+</svg>

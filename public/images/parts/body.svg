@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Placeholder illustration of a fuel tank body panel">
+  <rect width="800" height="600" fill="#F3F4F6"/>
+  <rect x="0" y="0" width="800" height="8" fill="#CC0000"/>
+  <g fill="none" stroke="#2A2E33" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M230 330 C230 220 320 170 420 180 C540 192 600 260 590 340 C580 420 480 450 380 440 C290 430 230 400 230 330 Z"/>
+    <circle cx="415" cy="245" r="26"/>
+    <path d="M280 360 C330 400 470 410 545 370"/>
+  </g>
+  <circle cx="415" cy="245" r="10" fill="#CC0000"/>
+  <path d="M295 362 C340 395 460 404 530 372" fill="none" stroke="#CC0000" stroke-width="8" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Placeholder illustration of a brake disc and caliper">
+  <rect width="800" height="600" fill="#F3F4F6"/>
+  <rect x="0" y="0" width="800" height="8" fill="#CC0000"/>
+  <g fill="none" stroke="#2A2E33" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="360" cy="300" r="150"/>
+    <circle cx="360" cy="300" r="46"/>
+    <circle cx="360" cy="185" r="12"/>
+    <circle cx="460" cy="242" r="12"/>
+    <circle cx="460" cy="358" r="12"/>
+    <circle cx="360" cy="415" r="12"/>
+    <circle cx="260" cy="358" r="12"/>
+    <circle cx="260" cy="242" r="12"/>
+    <path d="M490 220 h90 a18 18 0 0 1 18 18 v124 a18 18 0 0 1 -18 18 h-90"/>
+    <line x1="505" y1="260" x2="560" y2="260"/>
+    <line x1="505" y1="300" x2="560" y2="300"/>
+  </g>
+  <circle cx="360" cy="300" r="16" fill="#CC0000"/>
+</svg>

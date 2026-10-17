@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Placeholder illustration of stacked clutch plates">
+  <rect width="800" height="600" fill="#F3F4F6"/>
+  <rect x="0" y="0" width="800" height="8" fill="#CC0000"/>
+  <g fill="none" stroke="#2A2E33" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="220" y="170" width="320" height="44" rx="10"/>
+    <rect x="245" y="240" width="320" height="44" rx="10"/>
+    <rect x="270" y="310" width="320" height="44" rx="10"/>
+    <circle cx="400" cy="450" r="80"/>
+    <circle cx="400" cy="450" r="30"/>
+    <line x1="340" y1="450" x2="370" y2="450"/>
+    <line x1="430" y1="450" x2="460" y2="450"/>
+  </g>
+  <circle cx="400" cy="450" r="12" fill="#CC0000"/>
+</svg>

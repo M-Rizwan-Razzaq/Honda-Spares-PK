@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Placeholder illustration of an air filter element">
+  <rect width="800" height="600" fill="#F3F4F6"/>
+  <rect x="0" y="0" width="800" height="8" fill="#CC0000"/>
+  <g fill="none" stroke="#2A2E33" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="230" y="180" width="340" height="240" rx="20"/>
+    <path d="M270 220 L300 380 L330 220 L360 380 L390 220 L420 380 L450 220 L480 380 L510 220 L540 380" stroke-width="10"/>
+  </g>
+  <rect x="230" y="180" width="340" height="26" rx="13" fill="#CC0000"/>
+</svg>
