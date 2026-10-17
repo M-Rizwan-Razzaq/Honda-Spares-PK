@@ -80,10 +80,10 @@ export function Hero() {
         <div className="relative">
           <div className="relative overflow-hidden rounded-3xl border border-gray-200 bg-surface shadow-card">
             <Image
-              src="/images/hero-graphic.svg"
-              alt="Line-art illustration of motorcycle sprockets, gears and engine components"
-              width={1200}
-              height={800}
+              src="/images/herosection.jpg"
+              alt="Motorcycle engine piston, spark plugs, chain, sprockets and replacement parts"
+              width={1152}
+              height={864}
               preload
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="h-auto w-full"

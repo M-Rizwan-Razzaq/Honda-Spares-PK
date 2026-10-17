@@ -117,6 +117,22 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
               );
             })}
           </ul>
+          <div className="mt-5 border-t border-gray-200 pt-4">
+            <p className="px-4 text-xs font-bold tracking-wide text-charcoal-soft uppercase">Store policies</p>
+            <ul className="mt-2 space-y-1">
+              {[
+                { href: "/returns-exchanges", label: "Returns & exchanges" },
+                { href: "/privacy", label: "Privacy policy" },
+                { href: "/terms", label: "Terms of service" },
+              ].map((policy) => (
+                <li key={policy.href}>
+                  <Link href={policy.href} onClick={onClose} className="block rounded-xl px-4 py-2.5 text-sm font-semibold text-ink hover:bg-surface hover:text-honda">
+                    {policy.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </nav>
 
         <div className="border-t border-gray-200 p-5">

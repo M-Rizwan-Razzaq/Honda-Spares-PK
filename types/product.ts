@@ -26,6 +26,7 @@ export interface MotorcycleModel {
   name: string;
   description: string;
   shortName: string;
+  imageSrc: string;
 }
 
 export interface Category {

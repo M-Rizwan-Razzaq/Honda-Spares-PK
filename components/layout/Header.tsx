@@ -32,7 +32,7 @@ export function Header() {
             className="flex shrink-0 items-center gap-2.5"
             aria-label={`${siteConfig.name} — home`}
           >
-            <Image src="/icon.svg" alt="" width={36} height={36} className="rounded-lg" />
+            <Image src="/images/logo-mark.jpg" alt={`${siteConfig.name} logo`} width={56} height={56} className="shrink-0 rounded-full bg-white object-contain" priority />
             <span className="flex flex-col leading-tight">
               <span className="text-base font-extrabold tracking-tight text-ink sm:text-lg">
                 {siteConfig.name}

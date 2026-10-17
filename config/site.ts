@@ -10,7 +10,7 @@ export const siteConfig = {
   tagline: "Motorcycle spare parts for Honda bike owners in Pakistan",
   description:
     "Browse genuine, OEM and aftermarket spare parts for popular Honda motorcycles in Pakistan — including CD 70, CD 70 Dream, Pridor, CG 125, CB 125F and CB 150F. Search by part name or model and send order requests on WhatsApp.",
-  url: "https://example.com",
+  url: "https://hondasparespk.com",
 
   currency: {
     code: "PKR",
@@ -20,12 +20,12 @@ export const siteConfig = {
 
   // PLACEHOLDER — replace with the real business WhatsApp number.
   // Include country code, digits only after normalisation, e.g. "+92 300 1234567".
-  whatsappNumber: "+92 300 0000000",
+  whatsappNumber: "+92 318 6592403",
   whatsappGreeting:
     "Assalam-o-Alaikum! I need help finding spare parts for my Honda motorcycle.",
 
-  contactEmail: "orders@example.com",
-  phoneDisplay: "+92 300 0000000",
+  contactEmail: "info.hondasparespk@gmail.com",
+  phoneDisplay: "+92 318 6592403",
 
   // PLACEHOLDER — no real shop address has been provided yet.
   address: "Shop address to be confirmed — Pakistan",
@@ -36,9 +36,9 @@ export const siteConfig = {
   },
 
   policies: {
-    returns: "Return and exchange policy will be published here before launch.",
-    privacy: "Privacy policy will be published here before launch.",
-    terms: "Terms of service will be published here before launch.",
+    returns: "Contact us promptly about an incorrect, damaged or unsuitable item so we can review the order and confirm next steps.",
+    privacy: "We use the contact, motorcycle and order details you share to answer enquiries, arrange delivery and provide support.",
+    terms: "Catalogue details are subject to confirmation; item, price and delivery are agreed directly before an order is confirmed.",
   },
 
   social: {

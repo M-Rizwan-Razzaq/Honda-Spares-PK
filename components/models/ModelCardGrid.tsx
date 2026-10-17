@@ -41,14 +41,14 @@ export function ModelCardGrid({
                   href={`/models/${modelItem.id}`}
                   className="group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-card transition-all hover:-translate-y-0.5 hover:border-honda hover:shadow-card-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-honda"
                 >
-                  <div className="relative aspect-[4/3] overflow-hidden bg-surface">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-white">
                     <Image
-                      src="/images/models/bike.svg"
-                      alt={`Generic motorcycle illustration for ${modelItem.name} parts`}
+                      src={modelItem.imageSrc}
+                      alt={`${modelItem.name} motorcycle`}
                       width={800}
                       height={600}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                      className="h-full w-full object-contain p-2 transition-transform duration-300 group-hover:scale-[1.03]"
                     />
                   </div>
                   <div className="flex flex-1 flex-col gap-2 p-5">

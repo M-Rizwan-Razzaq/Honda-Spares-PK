@@ -24,7 +24,7 @@ export async function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2.5">
-              <Image src="/icon.svg" alt="" width={34} height={34} className="rounded-lg" />
+              <Image src="/images/logo-mark.jpg" alt={`${siteConfig.name} logo`} width={56} height={56} className="shrink-0 rounded-full bg-white object-contain" />
               <span className="text-lg font-extrabold text-white">{siteConfig.name}</span>
             </div>
             <p className="text-sm leading-relaxed text-gray-400">{siteConfig.description}</p>
@@ -113,19 +113,22 @@ export async function Footer() {
               <li>Email: {siteConfig.contactEmail}</li>
               <li>Location: {siteConfig.address}</li>
             </ul>
-            <div className="mt-4 space-y-2 rounded-xl border border-white/10 bg-white/5 p-4 text-xs leading-relaxed text-gray-400">
-              <p>
-                <span className="font-bold text-gray-200">Returns & exchanges:</span>{" "}
-                {siteConfig.policies.returns}
-              </p>
-              <p>
-                <span className="font-bold text-gray-200">Privacy:</span>{" "}
-                {siteConfig.policies.privacy}
-              </p>
-              <p>
-                <span className="font-bold text-gray-200">Terms:</span> {siteConfig.policies.terms}
-              </p>
-            </div>
+            <nav aria-label="Store policies" className="mt-5">
+              <h3 className="text-xs font-bold tracking-wide text-gray-200 uppercase">Store policies</h3>
+              <ul className="mt-3 space-y-2">
+                {[
+                  { href: "/returns-exchanges", label: "Returns & exchanges" },
+                  { href: "/privacy", label: "Privacy policy" },
+                  { href: "/terms", label: "Terms of service" },
+                ].map((policy) => (
+                  <li key={policy.href}>
+                    <Link href={policy.href} className="text-sm text-gray-400 transition-colors hover:text-white">
+                      {policy.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
         </div>
 

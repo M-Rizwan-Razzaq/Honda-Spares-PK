@@ -11,6 +11,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteConfig.url}/categories`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${siteConfig.url}/about`, changeFrequency: "monthly", priority: 0.5 },
     { url: `${siteConfig.url}/contact`, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${siteConfig.url}/returns-exchanges`, changeFrequency: "monthly", priority: 0.4 },
+    { url: `${siteConfig.url}/privacy`, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${siteConfig.url}/terms`, changeFrequency: "yearly", priority: 0.3 },
   ];
 
   const modelPages: MetadataRoute.Sitemap = motorcycleModels.map((model) => ({

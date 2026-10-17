@@ -14,14 +14,18 @@ A multi-page e-commerce storefront for selling genuine, OEM and aftermarket spar
 | `/categories/[id]` | Parts in a single category |
 | `/about` | About the business |
 | `/contact` | Contact details and FAQ |
+| `/returns-exchanges` | Returns and exchange process |
+| `/privacy` | Privacy policy |
+| `/terms` | Terms of service |
 
 Unknown `[id]` values under `/models` and `/categories` are rejected in `proxy.ts` (Next 16's renamed middleware) so they return a hard `404` instead of a soft-200 shell.
 
 ## Tech stack
 
-- Next.js 16 (App Router, Turbopack, Cache Components)
+- Next.js 16 (App Router, Turbopack development, Webpack production build, Cache Components)
 - React 19 + TypeScript (strict)
-- Tailwind CSS v4 (via `@tailwindcss/turbopack`)
+- Tailwind CSS v4 (via `@tailwindcss/postcss`)
+- Barlow served locally through `next/font/local` (no Google Fonts build-time request)
 - lucide-react icons
 
 ## Getting started
@@ -47,9 +51,9 @@ Open http://localhost:3000.
 
 All business details live in **`config/site.ts`**. Everything below is a **placeholder** and must be replaced with real values:
 
-- `whatsappNumber` — the single source of truth for the WhatsApp order flow (digits are normalised automatically; `+92 300 0000000` ships as a placeholder).
+- `whatsappNumber` — the single source of truth for the WhatsApp order flow (digits are normalised automatically; `+92 318 6592403` ships as a placeholder).
 - `contactEmail`, `phoneDisplay`, `address` — contact placeholders.
-- `url` — used for `metadataBase`, `robots.txt` and `sitemap.xml` (currently `https://example.com`).
+- `url` — used for `metadataBase`, `robots.txt` and `sitemap.xml` (currently `https://hondasparespk.com`).
 - `social` — links render in the footer only when non-empty.
 - `policies`, `shipping`, `demoNotice`, `legalDisclaimer` — footer/notice copy.
 
@@ -77,7 +81,7 @@ components/
   products/              # ProductExplorer, ProductCard, ProductFilters, ProductDetails
   cart/                  # CartDrawer
   checkout/              # WhatsAppCheckout
-  common/                # PageHeader, Modal, Accordion, Badges, QuantityStepper, WhatsAppButton, SectionHeading
+  common/                # PageHeader, Modal, Accordion, CustomSelect, Badges, QuantityStepper, WhatsAppButton, SectionHeading
 config/site.ts           # Central business configuration
 context/                 # CartContext (useSyncExternalStore)
 data/                    # products, models, categories, nav

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Barlow } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { Providers } from "@/components/Providers";
@@ -10,9 +10,14 @@ import { CartDrawer } from "@/components/cart/CartDrawer";
 import { WhatsAppCheckout } from "@/components/checkout/WhatsAppCheckout";
 import { WhatsAppButton } from "@/components/common/WhatsAppButton";
 
-const barlow = Barlow({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+const barlow = localFont({
+  src: [
+    { path: "../public/fonts/Barlow-Regular.ttf", weight: "400" },
+    { path: "../public/fonts/Barlow-Medium.ttf", weight: "500" },
+    { path: "../public/fonts/Barlow-SemiBold.ttf", weight: "600" },
+    { path: "../public/fonts/Barlow-Bold.ttf", weight: "700" },
+    { path: "../public/fonts/Barlow-ExtraBold.ttf", weight: "800" },
+  ],
   variable: "--font-barlow",
   display: "swap",
 });
@@ -53,9 +58,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.name} — Honda Motorcycle Spare Parts`,
     description: siteConfig.description,
-  },
-  icons: {
-    icon: "/icon.svg",
   },
   robots: {
     index: true,

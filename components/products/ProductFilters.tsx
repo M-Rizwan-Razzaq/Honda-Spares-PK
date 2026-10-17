@@ -1,6 +1,7 @@
 "use client";
 
 import { SlidersHorizontal, X } from "lucide-react";
+import { CustomSelect } from "@/components/common/CustomSelect";
 import { categories } from "@/data/categories";
 import { motorcycleModels } from "@/data/models";
 import { priceBounds } from "@/data/products";
@@ -72,43 +73,37 @@ export function ProductFilters({
       <div className="mt-5 space-y-5">
         {!lockedModel && (
           <div>
-            <label htmlFor="filter-model" className="text-xs font-bold text-charcoal">
+            <p className="text-xs font-bold text-charcoal">
               Motorcycle model
-            </label>
-            <select
-              id="filter-model"
+            </p>
+            <CustomSelect
+              label="Motorcycle model"
               value={model ?? ""}
-              onChange={(event) => onModelChange(event.target.value || null)}
-              className="mt-2 w-full rounded-xl border border-gray-200 bg-surface px-3 py-2.5 text-sm font-medium text-ink focus:border-honda focus:bg-white focus:outline-none"
-            >
-              <option value="">All models</option>
-              {motorcycleModels.map((modelItem) => (
-                <option key={modelItem.id} value={modelItem.id}>
-                  {modelItem.name}
-                </option>
-              ))}
-            </select>
+              onChange={(value) => onModelChange(value || null)}
+              className="mt-2 w-full"
+              options={[
+                { value: "", label: "All models" },
+                ...motorcycleModels.map((modelItem) => ({ value: modelItem.id, label: modelItem.name })),
+              ]}
+            />
           </div>
         )}
 
         {!lockedCategory && (
           <div>
-            <label htmlFor="filter-category" className="text-xs font-bold text-charcoal">
+            <p className="text-xs font-bold text-charcoal">
               Category
-            </label>
-            <select
-              id="filter-category"
+            </p>
+            <CustomSelect
+              label="Category"
               value={category ?? ""}
-              onChange={(event) => onCategoryChange(event.target.value || null)}
-              className="mt-2 w-full rounded-xl border border-gray-200 bg-surface px-3 py-2.5 text-sm font-medium text-ink focus:border-honda focus:bg-white focus:outline-none"
-            >
-              <option value="">All categories</option>
-              {categories.map((categoryItem) => (
-                <option key={categoryItem.id} value={categoryItem.id}>
-                  {categoryItem.name}
-                </option>
-              ))}
-            </select>
+              onChange={(value) => onCategoryChange(value || null)}
+              className="mt-2 w-full"
+              options={[
+                { value: "", label: "All categories" },
+                ...categories.map((categoryItem) => ({ value: categoryItem.id, label: categoryItem.name })),
+              ]}
+            />
           </div>
         )}
 
@@ -171,22 +166,12 @@ export function SortSelect({
   onChange: (value: SortOption) => void;
 }) {
   return (
-    <div>
-      <label htmlFor="sort-select" className="sr-only">
-        Sort products
-      </label>
-      <select
-        id="sort-select"
-        value={value}
-        onChange={(event) => onChange(event.target.value as SortOption)}
-        className="rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-sm font-semibold text-ink focus:border-honda focus:outline-none"
-      >
-        {sortOptions.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
-    </div>
+    <CustomSelect
+      label="Sort products"
+      value={value}
+      onChange={(nextValue) => onChange(nextValue as SortOption)}
+      className="w-auto min-w-44 max-w-[min(16rem,55vw)]"
+      options={sortOptions}
+    />
   );
 }
