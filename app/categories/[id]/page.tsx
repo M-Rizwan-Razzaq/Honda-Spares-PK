@@ -39,7 +39,7 @@ export default function CategoryDetailPage({
   );
 }
 
-async function CategoryContent({ params }: PageProps<"/categories/[id]">) {
+async function CategoryContent({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const category = categoryById.get(id);
   if (!category) notFound();
