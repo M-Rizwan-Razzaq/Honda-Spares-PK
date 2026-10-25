@@ -57,7 +57,8 @@ function ProductDetailsPanel({ product }: { product: Product }) {
       <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-surface">
         <Image
           src={product.image}
-          alt={`Placeholder illustration for ${product.name}`}
+          alt={`${product.name} for Honda motorcycles`}
+          unoptimized
           width={800}
           height={600}
           sizes="(max-width: 640px) 100vw, 40vw"

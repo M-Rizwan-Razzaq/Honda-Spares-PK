@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Magnet Coil (Stator) illustration">
+<defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#f8f9fa"/><stop offset="1" stop-color="#e9ecef"/></linearGradient><radialGradient id="plate"><stop stop-color="#fff"/><stop offset="1" stop-color="#f0f2f3"/></radialGradient></defs>
+<rect width="800" height="600" fill="url(#bg)"/><rect width="800" height="8" fill="#cc0000"/><circle cx="400" cy="255" r="180" fill="url(#plate)"/><ellipse cx="400" cy="442" rx="148" ry="18" fill="#ccd1d5" opacity=".65"/>
+<g transform="translate(400 255) scale(1.2)"><circle r="89" fill="#30363d"/><circle r="48" fill="#f3f4f6"/><g fill="none" stroke="#c18435" stroke-width="11"><path d="M-60-55Q0-103 60-55T60 55Q0 103-60 55T-60-55Z"/><path d="M-38-34Q0-64 38-34T38 34Q0 64-38 34T-38-34Z"/></g></g>
+<rect y="486" width="800" height="114" fill="#fff" opacity=".97"/><rect y="486" width="8" height="114" fill="#cc0000"/>
+<text x="36" y="540" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#252a30">Magnet Coil (Stator)</text>
+<text x="36" y="574" font-family="Arial,sans-serif" font-size="13" letter-spacing="2" fill="#6f7880">MOTORCYCLE SPARE PART</text></svg>

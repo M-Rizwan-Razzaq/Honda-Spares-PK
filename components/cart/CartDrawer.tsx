@@ -59,7 +59,8 @@ export function CartDrawer() {
               <li key={line.productId} className="flex gap-4 py-4">
                 <Image
                   src={line.product.image}
-                  alt={`Placeholder illustration for ${line.product.name}`}
+                  alt={`${line.product.name} for Honda motorcycles`}
+                  unoptimized
                   width={96}
                   height={96}
                   className="h-20 w-20 shrink-0 rounded-xl border border-gray-200 bg-surface object-cover"

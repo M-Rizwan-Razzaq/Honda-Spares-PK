@@ -47,7 +47,8 @@ export function ProductCard({ product, onOpenDetails }: ProductCardProps) {
       >
         <Image
           src={product.image}
-          alt={`Placeholder illustration for ${product.name}`}
+          alt={`${product.name} for Honda motorcycles`}
+          unoptimized
           width={800}
           height={600}
           sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Alloy Brake &amp; Clutch Lever Set illustration">
+<defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#f8f9fa"/><stop offset="1" stop-color="#e9ecef"/></linearGradient><radialGradient id="plate"><stop stop-color="#fff"/><stop offset="1" stop-color="#f0f2f3"/></radialGradient></defs>
+<rect width="800" height="600" fill="url(#bg)"/><rect width="800" height="8" fill="#cc0000"/><circle cx="400" cy="255" r="180" fill="url(#plate)"/><ellipse cx="400" cy="442" rx="148" ry="18" fill="#ccd1d5" opacity=".65"/>
+<g transform="translate(400 255) scale(1.2)"><g fill="#bfc5ca" stroke="#30363d" stroke-width="12"><path d="M-100-70L-67-78Q-58-13 7 20L76 56 55 82-17 52Q-95 16-100-70Z"/><path d="M20-70L53-78Q62-13 127 20L196 56 175 82 103 52Q25 16 20-70Z"/></g><circle cx="-67" cy="-65" r="13" fill="#cc0000"/></g>
+<rect y="486" width="800" height="114" fill="#fff" opacity=".97"/><rect y="486" width="8" height="114" fill="#cc0000"/>
+<text x="36" y="540" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#252a30">Alloy Brake &amp; Clutch Lever Set</text>
+<text x="36" y="574" font-family="Arial,sans-serif" font-size="13" letter-spacing="2" fill="#6f7880">MOTORCYCLE SPARE PART</text></svg>

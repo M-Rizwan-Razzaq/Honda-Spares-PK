@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Fuel Tank (Unpainted) illustration">
+<defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#f8f9fa"/><stop offset="1" stop-color="#e9ecef"/></linearGradient><radialGradient id="plate"><stop stop-color="#fff"/><stop offset="1" stop-color="#f0f2f3"/></radialGradient></defs>
+<rect width="800" height="600" fill="url(#bg)"/><rect width="800" height="8" fill="#cc0000"/><circle cx="400" cy="255" r="180" fill="url(#plate)"/><ellipse cx="400" cy="442" rx="148" ry="18" fill="#ccd1d5" opacity=".65"/>
+<g transform="translate(400 255) scale(1.2)"><path d="M-110 15Q-116-42-45-70L-20-96H35L55-68Q118-42 110 20Q95 73 0 74Q-90 72-110 15Z" fill="#b8bfc4" stroke="#30363d" stroke-width="12"/><ellipse cx="8" cy="-82" rx="22" ry="11" fill="#30363d"/><path d="M-77 20Q0 55 77 18" fill="none" stroke="#fff" stroke-width="11"/></g>
+<rect y="486" width="800" height="114" fill="#fff" opacity=".97"/><rect y="486" width="8" height="114" fill="#cc0000"/>
+<text x="36" y="540" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#252a30">Fuel Tank (Unpainted)</text>
+<text x="36" y="574" font-family="Arial,sans-serif" font-size="13" letter-spacing="2" fill="#6f7880">MOTORCYCLE SPARE PART</text></svg>

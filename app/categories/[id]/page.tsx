@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -22,9 +23,23 @@ export async function generateMetadata({
   };
 }
 
-export default async function CategoryDetailPage({
+export default function CategoryDetailPage({
   params,
 }: PageProps<"/categories/[id]">) {
+  return (
+    <Suspense
+      fallback={
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+          <p className="text-sm font-semibold text-charcoal-soft">Loading category…</p>
+        </div>
+      }
+    >
+      <CategoryContent params={params} />
+    </Suspense>
+  );
+}
+
+async function CategoryContent({ params }: PageProps<"/categories/[id]">) {
   const { id } = await params;
   const category = categoryById.get(id);
   if (!category) notFound();

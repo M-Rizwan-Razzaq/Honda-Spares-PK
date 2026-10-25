@@ -24,6 +24,7 @@ import type { Category } from "@/types/product";
 
 export interface CategoryWithIcon extends Category {
   icon: ComponentType<{ className?: string; "aria-hidden"?: boolean }>;
+  imageSrc?: string;
 }
 
 export const categories: CategoryWithIcon[] = [
@@ -44,6 +45,7 @@ export const categories: CategoryWithIcon[] = [
     name: "Brakes",
     description: "Brake shoes, disc pads, master cylinders and hardware.",
     icon: Disc3,
+    imageSrc: "/images/parts/brake-shoes.webp",
   },
   {
     id: "electrical",
@@ -62,6 +64,7 @@ export const categories: CategoryWithIcon[] = [
     name: "Chain & Sprocket Kits",
     description: "Drive chains, sprockets and full replacement kits.",
     icon: Link,
+    imageSrc: "/images/parts/chain-sprocket-kit.webp",
   },
   {
     id: "body-parts",
@@ -80,6 +83,7 @@ export const categories: CategoryWithIcon[] = [
     name: "Air Filters",
     description: "Filter elements and housings for daily-running engines.",
     icon: Wind,
+    imageSrc: "/images/parts/air-filter.webp",
   },
   {
     id: "oil-filters",
@@ -104,6 +108,7 @@ export const categories: CategoryWithIcon[] = [
     name: "Lights & Indicators",
     description: "Headlights, tail lights, bulbs and turn signals.",
     icon: Lightbulb,
+    imageSrc: "/images/parts/headlight.webp",
   },
   {
     id: "mirrors",
@@ -128,6 +133,7 @@ export const categories: CategoryWithIcon[] = [
     name: "Spark Plugs",
     description: "Standard and iridium plugs for 70cc to 150cc engines.",
     icon: Flame,
+    imageSrc: "/images/parts/spark-plug.webp",
   },
   {
     id: "hardware",

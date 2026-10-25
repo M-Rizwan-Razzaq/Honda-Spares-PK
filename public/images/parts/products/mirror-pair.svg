@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Rear View Mirror Pair illustration">
+<defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#f8f9fa"/><stop offset="1" stop-color="#e9ecef"/></linearGradient><radialGradient id="plate"><stop stop-color="#fff"/><stop offset="1" stop-color="#f0f2f3"/></radialGradient></defs>
+<rect width="800" height="600" fill="url(#bg)"/><rect width="800" height="8" fill="#cc0000"/><circle cx="400" cy="255" r="180" fill="url(#plate)"/><ellipse cx="400" cy="442" rx="148" ry="18" fill="#ccd1d5" opacity=".65"/>
+<g transform="translate(400 255) scale(1.2)"><g fill="#d6dce0" stroke="#30363d" stroke-width="11"><ellipse cx="-55" cy="-53" rx="57" ry="42"/><ellipse cx="70" cy="-53" rx="57" ry="42"/></g><path d="M-48-12L-6 74M61-12L18 74" stroke="#30363d" stroke-width="13"/><circle cx="-6" cy="74" r="10" fill="#cc0000"/><circle cx="18" cy="74" r="10" fill="#cc0000"/></g>
+<rect y="486" width="800" height="114" fill="#fff" opacity=".97"/><rect y="486" width="8" height="114" fill="#cc0000"/>
+<text x="36" y="540" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#252a30">Rear View Mirror Pair</text>
+<text x="36" y="574" font-family="Arial,sans-serif" font-size="13" letter-spacing="2" fill="#6f7880">MOTORCYCLE SPARE PART</text></svg>

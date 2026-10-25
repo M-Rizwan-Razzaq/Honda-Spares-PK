@@ -17,7 +17,7 @@ export const products: Product[] = [
     models: ["cd-70", "cd-70-dream"],
     classification: "genuine-honda",
     stock: "in-stock",
-    image: "/images/parts/engine.svg",
+    image: "/images/parts/products/piston-ring-set.svg",
     description:
       "Replacement piston ring set for 70cc engines. Sample listing — final grade, brand and fitment will be confirmed before dispatch.",
     features: ["Standard size rings", "Clip set included", "Sample catalog item"],
@@ -33,7 +33,7 @@ export const products: Product[] = [
     models: ["cd-70", "cd-70-dream", "pridor"],
     classification: "aftermarket",
     stock: "in-stock",
-    image: "/images/parts/engine.svg",
+    image: "/images/parts/products/timing-chain.svg",
     description:
       "Timing chain for routine engine overhaul. Aftermarket sample listing; quality grade will be stated on the final product page.",
     features: ["Aftermarket sample", "Suitable for 70cc–100cc engines"],
@@ -48,7 +48,7 @@ export const products: Product[] = [
     models: ["cg-125", "cg-125-special"],
     classification: "oem",
     stock: "low-stock",
-    image: "/images/parts/engine.svg",
+    image: "/images/parts/products/cylinder-block-cg125.svg",
     description:
       "Cylinder block assembly sample listing for CG 125 applications. Bore size and piston compatibility are confirmed at order time.",
     features: ["OEM-style sample listing", "Bore confirmed before dispatch"],
@@ -63,7 +63,7 @@ export const products: Product[] = [
     models: ["cg-125", "cg-125-special"],
     classification: "genuine-honda",
     stock: "in-stock",
-    image: "/images/parts/engine.svg",
+    image: "/images/parts/products/rocker-arm-set.svg",
     description:
       "Rocker arm set sample listing for CG 125 cylinder heads. Genuine classification is sample data pending stock verification.",
     features: ["Complete pair", "Sample classification"],
@@ -78,7 +78,7 @@ export const products: Product[] = [
     models: ["cb-125f"],
     classification: "aftermarket",
     stock: "in-stock",
-    image: "/images/parts/engine.svg",
+    image: "/images/parts/products/top-end-gasket-kit.svg",
     description:
       "Head and cylinder gasket set for top-end rebuilds. Confirm your engine code before ordering.",
     features: ["Head gasket included", "Base gasket included"],
@@ -93,7 +93,7 @@ export const products: Product[] = [
     models: ["cg-125", "cg-125-special"],
     classification: "genuine-honda",
     stock: "in-stock",
-    image: "/images/parts/clutch.svg",
+    image: "/images/parts/products/clutch-plate-set.svg",
     description:
       "Clutch plate set sample listing for CG 125. Plate count and friction material grade are confirmed at order time.",
     features: ["Full friction plate set", "Sample catalog item"],
@@ -109,7 +109,7 @@ export const products: Product[] = [
     models: ["cg-125"],
     classification: "oem",
     stock: "backorder",
-    image: "/images/parts/clutch.svg",
+    image: "/images/parts/products/clutch-center-housing.svg",
     description:
       "Clutch center and outer housing sample listing. Currently shown as backorder — lead time confirmed on request.",
     features: ["Center + housing pair", "Backorder sample status"],
@@ -124,7 +124,7 @@ export const products: Product[] = [
     models: ["cd-70", "cd-70-dream"],
     classification: "aftermarket",
     stock: "low-stock",
-    image: "/images/parts/clutch.svg",
+    image: "/images/parts/products/gear-shift-fork-set.svg",
     description:
       "Shift fork set sample listing for 70cc gearboxes. Fork lengths vary by model year — fitment is checked before dispatch.",
     features: ["Complete fork set", "Fitment check included"],
@@ -139,7 +139,7 @@ export const products: Product[] = [
     models: ["cd-70", "cd-70-dream", "pridor"],
     classification: "aftermarket",
     stock: "in-stock",
-    image: "/images/parts/brakes.svg",
+    image: "/images/parts/brake-shoes.webp",
     description:
       "Drum brake shoe set sample listing for front wheels on small-displacement Honda models.",
     features: ["Pair of shoes", "Springs included on most sets"],
@@ -155,7 +155,7 @@ export const products: Product[] = [
     models: ["cb-125f", "cb-150f"],
     classification: "oem",
     stock: "in-stock",
-    image: "/images/parts/brakes.svg",
+    image: "/images/parts/products/disc-brake-pad-set.svg",
     description:
       "Sintered disc brake pad sample listing for front calipers. Confirm caliper type for your model year.",
     features: ["Front axle pair", "OEM-style friction compound"],
@@ -170,7 +170,7 @@ export const products: Product[] = [
     models: ["cb-125f"],
     classification: "aftermarket",
     stock: "low-stock",
-    image: "/images/parts/brakes.svg",
+    image: "/images/parts/products/brake-master-cylinder.svg",
     description:
       "Front brake master cylinder sample listing with lever. Reservoir cap and mirror boss details confirmed before dispatch.",
     features: ["Lever included", "Mirror mount type confirmed"],
@@ -185,7 +185,7 @@ export const products: Product[] = [
     models: ["cd-70", "cd-70-dream"],
     classification: "aftermarket",
     stock: "in-stock",
-    image: "/images/parts/electrical.svg",
+    image: "/images/parts/products/cdi-unit.svg",
     description:
       "AC-CDI ignition unit sample listing. Connector shape and advance curve are matched to your bike before dispatch.",
     features: ["Direct plug-in style", "Connector verified before dispatch"],
@@ -200,7 +200,7 @@ export const products: Product[] = [
     models: ["cg-125", "cg-125-special"],
     classification: "oem",
     stock: "in-stock",
-    image: "/images/parts/electrical.svg",
+    image: "/images/parts/products/regulator-rectifier.svg",
     description:
       "Regulator rectifier sample listing for charging-system repairs. Pin configuration is confirmed for your model year.",
     features: ["4-pin sample configuration", "Charging output checked"],
@@ -215,7 +215,7 @@ export const products: Product[] = [
     models: ["cg-125"],
     classification: "genuine-honda",
     stock: "backorder",
-    image: "/images/parts/electrical.svg",
+    image: "/images/parts/products/magnet-coil.svg",
     description:
       "Magneto stator coil sample listing. Shown as backorder; lead time and alternative options are shared on request.",
     features: ["Full wound assembly", "Backorder sample status"],
@@ -231,7 +231,7 @@ export const products: Product[] = [
     fitsUniversal: true,
     classification: "aftermarket",
     stock: "in-stock",
-    image: "/images/parts/suspension.svg",
+    image: "/images/parts/products/fork-oil-seal-kit.svg",
     description:
       "Fork oil seal and dust seal kit, offered as a universal-fit sample. Fork tube diameter is confirmed for your model before dispatch.",
     features: ["Oil seal + dust seal", "Universal sample listing"],
@@ -246,7 +246,7 @@ export const products: Product[] = [
     models: ["cg-125", "cg-125-special"],
     classification: "aftermarket",
     stock: "in-stock",
-    image: "/images/parts/suspension.svg",
+    image: "/images/parts/products/rear-shock-pair.svg",
     description:
       "Rear shock absorber pair sample listing with step-less preload adjusters. Length and eye measurements confirmed at order time.",
     features: ["Pair of shocks", "Preload adjustable sample"],
@@ -261,7 +261,7 @@ export const products: Product[] = [
     models: ["cd-70", "cd-70-dream"],
     classification: "oem",
     stock: "in-stock",
-    image: "/images/parts/chain.svg",
+    image: "/images/parts/chain-sprocket-kit.webp",
     description:
       "Complete 428H chain and sprocket kit sample listing — front sprocket, rear sprocket and chain in one box.",
     features: ["Front + rear sprocket", "428H chain included"],
@@ -277,7 +277,7 @@ export const products: Product[] = [
     models: ["pridor", "cg-125"],
     classification: "aftermarket",
     stock: "in-stock",
-    image: "/images/parts/chain.svg",
+    image: "/images/parts/products/drive-chain-428h.svg",
     description:
       "428H drive chain sample listing supplied with connecting link. Link count is confirmed against your wheel setup.",
     features: ["Connecting link included", "Link count verified"],
@@ -292,7 +292,7 @@ export const products: Product[] = [
     models: ["cd-70"],
     classification: "aftermarket",
     stock: "in-stock",
-    image: "/images/parts/body.svg",
+    image: "/images/parts/products/front-fender.svg",
     description:
       "Chrome front fender sample listing for CD 70. Fitment can vary across model years — share your year when ordering.",
     features: ["Chrome finish sample", "Mounting points pre-drilled"],
@@ -307,7 +307,7 @@ export const products: Product[] = [
     models: ["cg-125"],
     classification: "genuine-honda",
     stock: "low-stock",
-    image: "/images/parts/body.svg",
+    image: "/images/parts/products/side-cover-set.svg",
     description:
       "Side cover pair sample listing, unpainted. Paint and decal work is arranged separately — confirm with our team.",
     features: ["Unpainted pair", "Paint service on request"],
@@ -322,7 +322,7 @@ export const products: Product[] = [
     models: ["cg-125"],
     classification: "oem",
     stock: "backorder",
-    image: "/images/parts/body.svg",
+    image: "/images/parts/products/fuel-tank.svg",
     description:
       "Replacement fuel tank sample listing, unpainted and without fittings. Cap, petcock and paint are quoted separately.",
     features: ["Unpainted shell", "Backorder sample status"],
@@ -337,7 +337,7 @@ export const products: Product[] = [
     models: ["cd-70", "cd-70-dream"],
     classification: "aftermarket",
     stock: "in-stock",
-    image: "/images/parts/fuel.svg",
+    image: "/images/parts/products/carburettor-assembly.svg",
     description:
       "Complete carburettor assembly sample listing for 70cc engines. Jetting is set to stock specs and tuned on request.",
     features: ["Complete assembly", "Idle screw externally accessible"],
@@ -352,7 +352,7 @@ export const products: Product[] = [
     models: ["cg-125", "pridor"],
     classification: "oem",
     stock: "in-stock",
-    image: "/images/parts/fuel.svg",
+    image: "/images/parts/products/fuel-cock.svg",
     description:
       "Fuel cock sample listing with on/reserve positions. Thread and gasket size confirmed for your tank.",
     features: ["On / Reserve positions", "Gasket included"],
@@ -367,7 +367,7 @@ export const products: Product[] = [
     models: ["cd-70", "cd-70-dream"],
     classification: "genuine-honda",
     stock: "in-stock",
-    image: "/images/parts/fuel.svg",
+    image: "/images/parts/products/carb-repair-kit.svg",
     description:
       "O-ring, needle valve and gasket repair kit sample listing for small-carb overhauls.",
     features: ["Needle valve + seat", "Full gasket set"],
@@ -382,7 +382,7 @@ export const products: Product[] = [
     models: ["cd-70", "cd-70-dream"],
     classification: "genuine-honda",
     stock: "in-stock",
-    image: "/images/parts/air-filter.svg",
+    image: "/images/parts/air-filter.webp",
     description:
       "Paper air filter element sample listing for routine service intervals. Foam pre-filter details confirmed per brand supplied.",
     features: ["Direct-fit element", "Service-interval replacement"],
@@ -398,7 +398,7 @@ export const products: Product[] = [
     models: ["cg-125", "cg-125-special"],
     classification: "aftermarket",
     stock: "in-stock",
-    image: "/images/parts/oil-filter.svg",
+    image: "/images/parts/products/oil-strainer-gasket.svg",
     description:
       "Oil strainer screen and cover gasket sample listing for CG 125 engine oil changes during full servicing.",
     features: ["Strainer screen", "Cover gasket included"],
@@ -413,7 +413,7 @@ export const products: Product[] = [
     models: ["cd-70", "cd-70-dream", "pridor"],
     classification: "aftermarket",
     stock: "in-stock",
-    image: "/images/parts/cable.svg",
+    image: "/images/parts/products/clutch-cable.svg",
     description:
       "Clutch cable sample listing with barrel ends. Length is confirmed against your handlebar and lever setup.",
     features: ["Barrel-end fittings", "Length verified before dispatch"],
@@ -428,7 +428,7 @@ export const products: Product[] = [
     models: ["cb-125f", "cb-150f"],
     classification: "aftermarket",
     stock: "in-stock",
-    image: "/images/parts/cable.svg",
+    image: "/images/parts/products/alloy-lever-set.svg",
     description:
       "Short-style alloy lever pair sample listing. Perch fitment and mirror-boss details are confirmed for your model.",
     features: ["Adjustable reach sample", "Pair of levers"],
@@ -444,7 +444,7 @@ export const products: Product[] = [
     fitsUniversal: true,
     classification: "oem",
     stock: "in-stock",
-    image: "/images/parts/wheel.svg",
+    image: "/images/parts/products/wheel-bearing-kit.svg",
     description:
       "Front wheel bearing and oil-seal kit offered as a universal sample. Bearing codes are matched to your hub before dispatch.",
     features: ["Bearings + oil seals", "Bearing code matched"],
@@ -459,7 +459,7 @@ export const products: Product[] = [
     models: ["cd-70", "cd-70-dream", "pridor"],
     classification: "aftermarket",
     stock: "in-stock",
-    image: "/images/parts/wheel.svg",
+    image: "/images/parts/products/inner-tube.svg",
     description:
       'Butyl inner tube sample listing in 2.75-18" size. Valve-stem style and wall thickness confirmed per brand supplied.',
     features: ["Butyl rubber sample", 'Common 18" fitment'],
@@ -474,7 +474,7 @@ export const products: Product[] = [
     models: ["cg-125"],
     classification: "oem",
     stock: "low-stock",
-    image: "/images/parts/light.svg",
+    image: "/images/parts/headlight.webp",
     description:
       "Round headlight assembly sample listing with 12V bulb. Bracket and rim finish details are confirmed before dispatch.",
     features: ["12V bulb included", "Sample rim finish"],
@@ -490,7 +490,7 @@ export const products: Product[] = [
     fitsUniversal: true,
     classification: "aftermarket",
     stock: "in-stock",
-    image: "/images/parts/light.svg",
+    image: "/images/parts/products/led-indicator-set.svg",
     description:
       "Universal LED turn-signal sample listing (set of four). Stalk thread size and relay requirements confirmed before dispatch.",
     features: ["Set of four", "Universal stalk thread"],
@@ -506,7 +506,7 @@ export const products: Product[] = [
     fitsUniversal: true,
     classification: "aftermarket",
     stock: "in-stock",
-    image: "/images/parts/mirror.svg",
+    image: "/images/parts/products/mirror-pair.svg",
     description:
       "Universal rear-view mirror pair sample listing. Thread direction (LH/RH) is confirmed for your handlebar before dispatch.",
     features: ["Pair of mirrors", "Thread direction verified"],
@@ -521,7 +521,7 @@ export const products: Product[] = [
     models: ["cg-125", "cg-125-special"],
     classification: "aftermarket",
     stock: "in-stock",
-    image: "/images/parts/seat.svg",
+    image: "/images/parts/products/seat-cover.svg",
     description:
       "Replacement seat cover sample listing. Cover pattern and stitching options are shared before dispatch.",
     features: ["Heavy-duty vinyl sample", "Fitment confirmed per model"],
@@ -536,7 +536,7 @@ export const products: Product[] = [
     models: ["cd-70-dream", "pridor", "cg-125"],
     classification: "oem",
     stock: "in-stock",
-    image: "/images/parts/battery.svg",
+    image: "/images/parts/products/battery.svg",
     description:
       "Sealed maintenance-free battery sample listing. Terminal layout and capacity are matched to your bike's electrical load.",
     features: ["Sealed AGM sample", "Pre-charged dispatch"],
@@ -552,7 +552,7 @@ export const products: Product[] = [
     models: ["cd-70", "cd-70-dream"],
     classification: "genuine-honda",
     stock: "in-stock",
-    image: "/images/parts/spark-plug.svg",
+    image: "/images/parts/spark-plug.webp",
     description:
       "Resistor-type spark plug sample listing for 70cc engines. Heat range is confirmed against your engine's spec sheet.",
     features: ["Resistor type", "Pre-gapped sample"],
@@ -568,7 +568,7 @@ export const products: Product[] = [
     fitsUniversal: true,
     classification: "aftermarket",
     stock: "in-stock",
-    image: "/images/parts/hardware.svg",
+    image: "/images/parts/products/body-bolts-kit.svg",
     description:
       "Common body-fastener sample kit — tank, side cover and seat bolts with washers. Exact contents listed before dispatch.",
     features: ["Assorted fasteners", "Washers included"],
@@ -583,7 +583,7 @@ export const products: Product[] = [
     models: ["cd-70", "cd-70-dream"],
     classification: "aftermarket",
     stock: "in-stock",
-    image: "/images/parts/service-kit.svg",
+    image: "/images/parts/products/service-kit-cd70.svg",
     description:
       "Bundled routine-service sample kit — air filter element, spark plug, oil and cable set. Kit contents can be customised on request.",
     features: ["Air filter + spark plug", "Engine oil included", "Customisable bundle"],
@@ -599,7 +599,7 @@ export const products: Product[] = [
     models: ["cg-125", "cg-125-special"],
     classification: "aftermarket",
     stock: "in-stock",
-    image: "/images/parts/service-kit.svg",
+    image: "/images/parts/products/service-kit-cg125.svg",
     description:
       "Bundled routine-service sample kit for CG 125 — oil, filters, plug and brake-shoe check items. Contents confirmed before dispatch.",
     features: ["Engine oil included", "Filter and plug bundle"],
