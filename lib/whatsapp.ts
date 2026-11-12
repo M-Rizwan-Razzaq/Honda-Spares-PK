@@ -37,6 +37,10 @@ export function buildCartOrderMessage(
   lines: CartLine[],
   customer: CustomerDetails,
 ): string {
+  if (lines.length === 0) {
+    throw new Error("Cannot create an order request with an empty cart.");
+  }
+
   const itemRows = lines.map(
     (line, index) =>
       `${index + 1}. ${line.product.name}\n` +
