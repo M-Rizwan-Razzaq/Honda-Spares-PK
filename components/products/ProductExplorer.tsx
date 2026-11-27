@@ -1,18 +1,88 @@
 "use client";
 
 import { Info, PackageOpen, Search, SlidersHorizontal, X } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Modal } from "@/components/common/Modal";
 import { SectionHeading } from "@/components/common/SectionHeading";
 import { ProductCard } from "./ProductCard";
 import { ProductDetails } from "./ProductDetails";
-import { ProductFilters, SortSelect } from "./ProductFilters";
-import { getCategoryName } from "@/data/categories";
-import { getModelNames } from "@/data/models";
+import { ProductFilters, sortOptions, SortSelect } from "./ProductFilters";
+import { categoryById, getCategoryName } from "@/data/categories";
+import { getModelNames, modelById } from "@/data/models";
 import { products, priceBounds } from "@/data/products";
 import { formatCurrency } from "@/lib/formatCurrency";
 import { siteConfig } from "@/config/site";
 import type { Product, SortOption } from "@/types/product";
+
+const searchDebounceMs = 300;
+const catalogueParamNames = ["q", "category", "model", "minPrice", "maxPrice", "sort"] as const;
+
+interface CatalogueFilters {
+  search: string;
+  category: string | null;
+  model: string | null;
+  priceMin: number | null;
+  priceMax: number | null;
+  sort: SortOption;
+}
+
+function parsePrice(value: string | null): number | null {
+  if (value === null || value.trim() === "") return null;
+
+  const price = Number(value);
+  return Number.isFinite(price) && price >= priceBounds.min && price <= priceBounds.max
+    ? price
+    : null;
+}
+
+function getFiltersFromSearchParams(
+  searchParams: { get: (name: string) => string | null },
+  fixedCategory?: string,
+  fixedModel?: string,
+): CatalogueFilters {
+  let priceMin = parsePrice(searchParams.get("minPrice"));
+  let priceMax = parsePrice(searchParams.get("maxPrice"));
+
+  if (priceMin !== null && priceMax !== null && priceMin > priceMax) {
+    [priceMin, priceMax] = [priceMax, priceMin];
+  }
+
+  if (priceMin === priceBounds.min) priceMin = null;
+  if (priceMax === priceBounds.max) priceMax = null;
+
+  const sort = searchParams.get("sort");
+  const isSortOption = sortOptions.some((option) => option.value === sort);
+
+  return {
+    search: searchParams.get("q")?.trim() ?? "",
+    category:
+      fixedCategory ??
+      (categoryById.has(searchParams.get("category") ?? "") ? searchParams.get("category") : null),
+    model:
+      fixedModel ??
+      (modelById.has(searchParams.get("model") ?? "") ? searchParams.get("model") : null),
+    priceMin,
+    priceMax,
+    sort: isSortOption ? (sort as SortOption) : "featured",
+  };
+}
+
+function FilterChip({ label, onRemove }: { label: string; onRemove: () => void }) {
+  return (
+    <span className="inline-flex items-center gap-1.5 rounded-full border border-honda/25 bg-honda-soft py-1 pr-1.5 pl-3 text-xs font-bold text-honda">
+      {label}
+      <button
+        type="button"
+        onClick={onRemove}
+        aria-label={`Remove filter: ${label}`}
+        className="rounded-full p-0.5 transition-colors hover:bg-honda hover:text-white"
+      >
+        <X className="h-3.5 w-3.5" aria-hidden />
+      </button>
+    </span>
+  );
+}
 
 export interface ProductExplorerProps {
   sectionId?: string;
@@ -22,13 +92,21 @@ export interface ProductExplorerProps {
   headingAlign?: "center" | "left";
   fixedCategory?: string;
   fixedModel?: string;
-  initialSearch?: string;
-  initialCategory?: string | null;
-  initialModel?: string | null;
   onRequestPartHref?: string;
 }
 
-export function ProductExplorer({
+export function ProductExplorer(props: ProductExplorerProps) {
+  const searchParams = useSearchParams();
+  const searchParamsKey = searchParams.toString();
+  const initialFilters = useMemo(
+    () => getFiltersFromSearchParams(searchParams, props.fixedCategory, props.fixedModel),
+    [searchParams, props.fixedCategory, props.fixedModel],
+  );
+
+  return <ProductExplorerContent key={searchParamsKey} {...props} initialFilters={initialFilters} />;
+}
+
+function ProductExplorerContent({
   sectionId = "shop",
   eyebrow = "Catalogue",
   title = "Shop spare parts",
@@ -36,48 +114,127 @@ export function ProductExplorer({
   headingAlign = "center",
   fixedCategory,
   fixedModel,
-  initialSearch = "",
-  initialCategory = null,
-  initialModel = null,
   onRequestPartHref = "/contact",
-}: ProductExplorerProps) {
-  const [search, setSearch] = useState(initialSearch);
-  const [category, setCategory] = useState<string | null>(fixedCategory ?? initialCategory);
-  const [model, setModel] = useState<string | null>(fixedModel ?? initialModel);
-  const [priceMin, setPriceMin] = useState<number | null>(null);
-  const [priceMax, setPriceMax] = useState<number | null>(null);
-  const [sort, setSort] = useState<SortOption>("featured");
+  initialFilters,
+}: ProductExplorerProps & { initialFilters: CatalogueFilters }) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const filtersRef = useRef<CatalogueFilters>(initialFilters);
+  const searchTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [search, setSearch] = useState(initialFilters.search);
+  const [category, setCategory] = useState<string | null>(initialFilters.category);
+  const [model, setModel] = useState<string | null>(initialFilters.model);
+  const [priceMin, setPriceMin] = useState<number | null>(initialFilters.priceMin);
+  const [priceMax, setPriceMax] = useState<number | null>(initialFilters.priceMax);
+  const [sort, setSort] = useState<SortOption>(initialFilters.sort);
   const [detailsProduct, setDetailsProduct] = useState<Product | null>(null);
   const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false);
 
-  const setBoundedPriceMin = (value: number | null) => {
+  useEffect(() => {
+    return () => {
+      if (searchTimeoutRef.current) clearTimeout(searchTimeoutRef.current);
+    };
+  }, []);
+
+  const updateUrl = useCallback((nextFilters: CatalogueFilters, mode: "push" | "replace") => {
+    const params = new URLSearchParams(window.location.search);
+    catalogueParamNames.forEach((name) => params.delete(name));
+
+    if (nextFilters.search) params.set("q", nextFilters.search);
+    if (!fixedCategory && nextFilters.category) params.set("category", nextFilters.category);
+    if (!fixedModel && nextFilters.model) params.set("model", nextFilters.model);
+    if (nextFilters.priceMin !== null) params.set("minPrice", String(nextFilters.priceMin));
+    if (nextFilters.priceMax !== null) params.set("maxPrice", String(nextFilters.priceMax));
+    if (nextFilters.sort !== "featured") params.set("sort", nextFilters.sort);
+
+    const query = params.toString();
+    const href = query ? `${pathname}?${query}` : pathname;
+    router[mode](href, { scroll: false });
+  }, [fixedCategory, fixedModel, pathname, router]);
+
+  const applyFilters = useCallback((nextFilters: CatalogueFilters, mode: "push" | "replace") => {
+    if (searchTimeoutRef.current) {
+      clearTimeout(searchTimeoutRef.current);
+      searchTimeoutRef.current = null;
+    }
+
+    filtersRef.current = nextFilters;
+    setSearch(nextFilters.search);
+    setCategory(nextFilters.category);
+    setModel(nextFilters.model);
+    setPriceMin(nextFilters.priceMin);
+    setPriceMax(nextFilters.priceMax);
+    setSort(nextFilters.sort);
+    updateUrl(nextFilters, mode);
+  }, [updateUrl]);
+
+  const updateFilters = useCallback(
+    (changes: Partial<CatalogueFilters>, mode: "push" | "replace" = "push") => {
+      applyFilters({ ...filtersRef.current, ...changes }, mode);
+    },
+    [applyFilters],
+  );
+
+  const updateSearch = useCallback((value: string) => {
+    const nextFilters = { ...filtersRef.current, search: value.trim() };
+    filtersRef.current = nextFilters;
+    setSearch(value);
+
+    if (searchTimeoutRef.current) clearTimeout(searchTimeoutRef.current);
+    searchTimeoutRef.current = setTimeout(() => {
+      searchTimeoutRef.current = null;
+      updateUrl(filtersRef.current, "replace");
+    }, searchDebounceMs);
+  }, [updateUrl]);
+
+  const setBoundedPriceMin = useCallback((value: number | null) => {
     if (value === null) {
-      setPriceMin(null);
+      updateFilters({ priceMin: null }, "replace");
       return;
     }
     const nextMin = Math.max(priceBounds.min, Math.min(value, priceBounds.max));
-    setPriceMin(nextMin);
-    if (priceMax !== null && nextMin > priceMax) setPriceMax(nextMin);
-  };
+    const normalizedMin = nextMin === priceBounds.min ? null : nextMin;
+    const currentPriceMax = filtersRef.current.priceMax;
+    updateFilters(
+      {
+        priceMin: normalizedMin,
+        priceMax:
+          currentPriceMax !== null && nextMin > currentPriceMax ? nextMin : currentPriceMax,
+      },
+      "replace",
+    );
+  }, [updateFilters]);
 
-  const setBoundedPriceMax = (value: number | null) => {
+  const setBoundedPriceMax = useCallback((value: number | null) => {
     if (value === null) {
-      setPriceMax(null);
+      updateFilters({ priceMax: null }, "replace");
       return;
     }
     const nextMax = Math.min(priceBounds.max, Math.max(value, priceBounds.min));
-    setPriceMax(nextMax);
-    if (priceMin !== null && nextMax < priceMin) setPriceMin(nextMax);
-  };
+    const normalizedMax = nextMax === priceBounds.max ? null : nextMax;
+    const currentPriceMin = filtersRef.current.priceMin;
+    updateFilters(
+      {
+        priceMax: normalizedMax,
+        priceMin: currentPriceMin !== null && nextMax < currentPriceMin ? nextMax : currentPriceMin,
+      },
+      "replace",
+    );
+  }, [updateFilters]);
 
-  const clearFilters = () => {
-    setSearch("");
-    setCategory(fixedCategory ?? null);
-    setModel(fixedModel ?? null);
-    setPriceMin(null);
-    setPriceMax(null);
-    setSort("featured");
-  };
+  const clearFilters = useCallback(() => {
+    applyFilters(
+      {
+        search: "",
+        category: fixedCategory ?? null,
+        model: fixedModel ?? null,
+        priceMin: null,
+        priceMax: null,
+        sort: "featured",
+      },
+      "push",
+    );
+  }, [applyFilters, fixedCategory, fixedModel]);
 
   const activeFilterCount = useMemo(() => {
     let count = 0;
@@ -124,30 +281,21 @@ export function ProductExplorer({
     }
   }, [search, category, model, priceMin, priceMax, sort]);
 
-  const chips: { key: string; label: string; onRemove: () => void }[] = [];
-  if (search.trim()) {
-    chips.push({ key: "search", label: `Search: “${search.trim()}”`, onRemove: () => setSearch("") });
-  }
-  if (!fixedCategory && category) {
-    chips.push({ key: "category", label: getCategoryName(category), onRemove: () => setCategory(null) });
-  }
-  if (!fixedModel && model) {
-    chips.push({
-      key: "model",
-      label: getModelNames([model])[0] ?? model,
-      onRemove: () => setModel(null),
-    });
-  }
-  if (priceMin !== null || priceMax !== null) {
-    chips.push({
-      key: "price",
-      label: `${formatCurrency(priceMin ?? priceBounds.min)} – ${formatCurrency(priceMax ?? priceBounds.max)}`,
-      onRemove: () => {
-        setPriceMin(null);
-        setPriceMax(null);
-      },
-    });
-  }
+  const clearSearch = useCallback(() => updateFilters({ search: "" }), [updateFilters]);
+  const clearCategory = useCallback(() => updateFilters({ category: null }), [updateFilters]);
+  const clearModel = useCallback(() => updateFilters({ model: null }), [updateFilters]);
+  const clearPriceRange = useCallback(
+    () => updateFilters({ priceMin: null, priceMax: null }),
+    [updateFilters],
+  );
+
+  const hasVisibleFilters =
+    Boolean(search.trim()) ||
+    Boolean(!fixedCategory && category) ||
+    Boolean(!fixedModel && model) ||
+    priceMin !== null ||
+    priceMax !== null ||
+    sort !== "featured";
 
   return (
     <section id={sectionId} className="border-t border-gray-200 bg-surface py-14 sm:py-16">
@@ -170,8 +318,8 @@ export function ProductExplorer({
                 activeFilterCount={activeFilterCount}
                 lockedCategory={Boolean(fixedCategory)}
                 lockedModel={Boolean(fixedModel)}
-                onCategoryChange={setCategory}
-                onModelChange={setModel}
+                onCategoryChange={(value) => updateFilters({ category: value })}
+                onModelChange={(value) => updateFilters({ model: value })}
                 onPriceMinChange={setBoundedPriceMin}
                 onPriceMaxChange={setBoundedPriceMax}
                 onClear={clearFilters}
@@ -193,14 +341,14 @@ export function ProductExplorer({
                   id={`${sectionId}-search`}
                   type="search"
                   value={search}
-                  onChange={(event) => setSearch(event.target.value)}
+                  onChange={(event) => updateSearch(event.target.value)}
                   placeholder="Search by part name, model or part number…"
                   className="w-full rounded-xl border border-gray-200 bg-white py-2.5 pr-10 pl-10 text-sm text-ink shadow-sm placeholder:text-charcoal-soft/80 focus:border-honda focus:outline-none"
                 />
                 {search && (
                   <button
                     type="button"
-                    onClick={() => setSearch("")}
+                    onClick={clearSearch}
                     aria-label="Clear search"
                     className="absolute top-1/2 right-3 -translate-y-1/2 rounded-full p-1 text-charcoal-soft hover:bg-surface hover:text-ink"
                   >
@@ -223,28 +371,25 @@ export function ProductExplorer({
                     </span>
                   )}
                 </button>
-                <SortSelect value={sort} onChange={setSort} />
+                <SortSelect value={sort} onChange={(value) => updateFilters({ sort: value })} />
               </div>
             </div>
 
-            {(chips.length > 0 || activeFilterCount > 0) && (
+            {hasVisibleFilters && (
               <div className="mt-4 flex flex-wrap items-center gap-2">
-                {chips.map((chip) => (
-                  <span
-                    key={chip.key}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-honda/25 bg-honda-soft py-1 pr-1.5 pl-3 text-xs font-bold text-honda"
-                  >
-                    {chip.label}
-                    <button
-                      type="button"
-                      onClick={chip.onRemove}
-                      aria-label={`Remove filter: ${chip.label}`}
-                      className="rounded-full p-0.5 transition-colors hover:bg-honda hover:text-white"
-                    >
-                      <X className="h-3.5 w-3.5" aria-hidden />
-                    </button>
-                  </span>
-                ))}
+                {search.trim() && <FilterChip label={`Search: “${search.trim()}”`} onRemove={clearSearch} />}
+                {!fixedCategory && category && (
+                  <FilterChip label={getCategoryName(category)} onRemove={clearCategory} />
+                )}
+                {!fixedModel && model && (
+                  <FilterChip label={getModelNames([model])[0] ?? model} onRemove={clearModel} />
+                )}
+                {(priceMin !== null || priceMax !== null) && (
+                  <FilterChip
+                    label={`${formatCurrency(priceMin ?? priceBounds.min)} – ${formatCurrency(priceMax ?? priceBounds.max)}`}
+                    onRemove={clearPriceRange}
+                  />
+                )}
                 <button
                   type="button"
                   onClick={clearFilters}
@@ -312,8 +457,8 @@ export function ProductExplorer({
             activeFilterCount={activeFilterCount}
             lockedCategory={Boolean(fixedCategory)}
             lockedModel={Boolean(fixedModel)}
-            onCategoryChange={setCategory}
-            onModelChange={setModel}
+            onCategoryChange={(value) => updateFilters({ category: value })}
+            onModelChange={(value) => updateFilters({ model: value })}
             onPriceMinChange={setBoundedPriceMin}
             onPriceMaxChange={setBoundedPriceMax}
             onClear={clearFilters}
