@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/common/PageHeader";
@@ -69,15 +70,23 @@ export default async function ModelDetailPage({ params }: PageProps<"/models/[id
         </div>
       </section>
 
-      <ProductExplorer
-        sectionId="model-parts"
-        eyebrow={`${model.name} parts`}
-        title={`Parts listed for the ${model.shortName}`}
-        description="Sample catalogue listings — final fitment, grade and stock are confirmed on WhatsApp before dispatch."
-        headingAlign="left"
-        fixedModel={model.id}
-        onRequestPartHref="/contact"
-      />
+      <Suspense
+        fallback={
+          <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+            <p className="text-sm font-semibold text-charcoal-soft">Loading catalogue…</p>
+          </div>
+        }
+      >
+        <ProductExplorer
+          sectionId="model-parts"
+          eyebrow={`${model.name} parts`}
+          title={`Parts listed for the ${model.shortName}`}
+          description="Sample catalogue listings — final fitment, grade and stock are confirmed on WhatsApp before dispatch."
+          headingAlign="left"
+          fixedModel={model.id}
+          onRequestPartHref="/contact"
+        />
+      </Suspense>
     </>
   );
 }
